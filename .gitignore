@@ -1,0 +1,21 @@
+# Compiled class file
+*.class
+*.iml
+*.ipr
+*.iws
+.project
+.classpath
+
+# Log file
+*.log
+
+# Package Files #
+.metadata
+tmp/
+.settings/
+target/
+
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
+
+.idea/

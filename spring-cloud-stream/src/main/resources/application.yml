@@ -1,0 +1,48 @@
+---
+server:
+  port: 11010
+spring:
+  application:
+    name: spring-cloud-stream
+  profiles: stream1
+  rabbitmq:
+    port: 5682
+  cloud:
+    stream:
+      bindings:
+        input-channel:
+          group: service-a
+          destination: greeting
+          consumer:
+            partitioned: true
+        output-channel:
+          group: service-b
+          destination: greeting
+          producer:
+            partitionKeyExpression: payload
+      instance-count: 2
+      instance-index: 0
+---
+server:
+  port: 11011
+spring:
+  application:
+    name: spring-cloud-stream
+  profiles: stream2
+  rabbitmq:
+    port: 5682
+  cloud:
+    stream:
+      bindings:
+        input-channel:
+          group: service-a
+          destination: greeting
+          consumer:
+            partitioned: true
+        output-channel:
+          group: service-b
+          destination: greeting
+          producer:
+            partitionKeyExpression: payload
+      instance-count: 2
+      instance-index: 1
