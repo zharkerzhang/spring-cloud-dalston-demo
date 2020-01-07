@@ -42,6 +42,9 @@
 
     <modules>
         <module>spring-cloud-stream</module>
+        <module>spring-cloud-eureka</module>
+        <module>spring-cloud-trace</module>
+        <module>spring-cloud-zipkin</module>
     </modules>
 
 </project>
