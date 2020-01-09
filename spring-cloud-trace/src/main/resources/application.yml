@@ -6,13 +6,16 @@ spring:
   application:
     name: trace-${trace.id}
   profiles: trace-${trace.id}
-  zipkin:
-    base-url: http://localhost:11031
+  rabbitmq:
+    port: 5682
+#  zipkin:
+#    base-url: http://localhost:11031
   sleuth:
     sampler:
       percentage: 1
-    web:
-      skip-pattern: "/api-docs.*|/autoconfig|/configprops|/dump|/health|/info|/metrics.*|/mappings|/swagger.*|.*\\.png|.*\\.css|.*\\.js|.*\\.html|/favicon.ico|/hystrix.stream"
+management:
+  security:
+    enabled: false
 server:
   port: 1102${trace.id}
 eureka:
@@ -27,13 +30,16 @@ spring:
   application:
     name: trace-${trace.id}
   profiles: trace-${trace.id}
-  zipkin:
-    base-url: http://localhost:11031
+  rabbitmq:
+    port: 5682
+#  zipkin:
+#    base-url: http://localhost:11031
   sleuth:
     sampler:
       percentage: 1
-    web:
-      skip-pattern: "/api-docs.*|/autoconfig|/configprops|/dump|/health|/info|/metrics.*|/mappings|/swagger.*|.*\\.png|.*\\.css|.*\\.js|.*\\.html|/favicon.ico|/hystrix.stream"
+management:
+  security:
+    enabled: false
 server:
   port: 1102${trace.id}
 eureka:
@@ -48,13 +54,16 @@ spring:
   application:
     name: trace-${trace.id}
   profiles: trace-${trace.id}
-  zipkin:
-    base-url: http://localhost:11031
+  rabbitmq:
+    port: 5682
+#  zipkin:
+#    base-url: http://localhost:11031
   sleuth:
     sampler:
       percentage: 1
-    web:
-      skip-pattern: "/api-docs.*|/autoconfig|/configprops|/dump|/health|/info|/metrics.*|/mappings|/swagger.*|.*\\.png|.*\\.css|.*\\.js|.*\\.html|/favicon.ico|/hystrix.stream"
+management:
+  security:
+    enabled: false
 server:
   port: 1102${trace.id}
 eureka:
@@ -69,13 +78,16 @@ spring:
   application:
     name: trace-${trace.id}
   profiles: trace-${trace.id}
-  zipkin:
-    base-url: http://localhost:11031
+  rabbitmq:
+    port: 5682
+#  zipkin:
+#    base-url: http://localhost:11031
   sleuth:
     sampler:
       percentage: 1
-    web:
-      skip-pattern: "/api-docs.*|/autoconfig|/configprops|/dump|/health|/info|/metrics.*|/mappings|/swagger.*|.*\\.png|.*\\.css|.*\\.js|.*\\.html|/favicon.ico|/hystrix.stream"
+management:
+  security:
+    enabled: false
 server:
   port: 1102${trace.id}
 eureka:
@@ -90,13 +102,19 @@ spring:
   application:
     name: trace-${trace.id}
   profiles: trace-${trace.id}
-  zipkin:
-    base-url: http://localhost:11031
+  rabbitmq:
+    port: 5682
+#  zipkin:
+#    base-url: http://localhost:11031
+    locator:
+      discovery:
+        enabled: true
   sleuth:
     sampler:
       percentage: 1
-    web:
-      skip-pattern: "/api-docs.*|/autoconfig|/configprops|/dump|/health|/info|/metrics.*|/mappings|/swagger.*|.*\\.png|.*\\.css|.*\\.js|.*\\.html|/favicon.ico|/hystrix.stream"
+management:
+  security:
+    enabled: false
 server:
   port: 1102${trace.id}
 eureka:
@@ -111,13 +129,16 @@ spring:
   application:
     name: trace-${trace.id}
   profiles: trace-${trace.id}
-  zipkin:
-    base-url: http://localhost:11031
+  rabbitmq:
+    port: 5682
+#  zipkin:
+#    base-url: http://localhost:11031
   sleuth:
     sampler:
       percentage: 1
-    web:
-      skip-pattern: "/api-docs.*|/autoconfig|/configprops|/dump|/health|/info|/metrics.*|/mappings|/swagger.*|.*\\.png|.*\\.css|.*\\.js|.*\\.html|/favicon.ico|/hystrix.stream"
+management:
+  security:
+    enabled: false
 server:
   port: 1102${trace.id}
 eureka:
@@ -132,13 +153,16 @@ spring:
   application:
     name: trace-${trace.id}
   profiles: trace-${trace.id}
-  zipkin:
-    base-url: http://localhost:11031
+  rabbitmq:
+    port: 5682
+#  zipkin:
+#    base-url: http://localhost:11031
   sleuth:
     sampler:
       percentage: 1
-    web:
-      skip-pattern: "/api-docs.*|/autoconfig|/configprops|/dump|/health|/info|/metrics.*|/mappings|/swagger.*|.*\\.png|.*\\.css|.*\\.js|.*\\.html|/favicon.ico|/hystrix.stream"
+management:
+  security:
+    enabled: false
 server:
   port: 1102${trace.id}
 eureka:

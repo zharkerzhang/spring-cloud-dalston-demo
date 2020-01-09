@@ -30,7 +30,7 @@ public class TraceController {
     @Autowired
     private RestTemplate restTemplate;
 
-    @RequestMapping(value = "/trace", method = RequestMethod.GET)
+    @RequestMapping(value = "/tracetrace", method = RequestMethod.GET)
     public String trace(@RequestParam(value = "previous",required = false) String previousTrace, HttpServletRequest request) {
         log.info("===<call trace-{}, TraceId={}, SpanId={}>===",traceId,
                 request.getHeader("X-B3-TraceId"), request.getHeader("X-B3-SpanId"));
@@ -47,7 +47,7 @@ public class TraceController {
             if(StringUtils.isEmpty(previousTrace)){
                 previousTrace = "start";
             }
-            String result = previousTrace+"=>"+Arrays.asList(nextTraces.split(",")).parallelStream().map(nextTrace->restTemplate.getForEntity("http://TRACE-"+nextTrace+"/trace?previous="+traceId, String.class).getBody())
+            String result = previousTrace+"=>"+Arrays.asList(nextTraces.split(",")).parallelStream().map(nextTrace->restTemplate.getForEntity("http://TRACE-"+nextTrace+"/tracetrace?previous="+traceId, String.class).getBody())
                     .collect(Collectors.joining("<br/>"));
             log.info("call next traces result: {}",result);
             return result;
