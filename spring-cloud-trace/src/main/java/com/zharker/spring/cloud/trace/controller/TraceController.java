@@ -25,7 +25,7 @@ public class TraceController {
     private String traceId;
 
     @Value("${trace.next}")
-    private String nextTraces;
+    private String[] nextTraces;
 
     @Autowired
     private RestTemplate restTemplate;
@@ -43,11 +43,11 @@ public class TraceController {
             e.printStackTrace();
         }
 
-        if(!StringUtils.isEmpty(nextTraces) && nextTraces.split(",").length>0){
+        if(nextTraces != null && nextTraces.length > 0){
             if(StringUtils.isEmpty(previousTrace)){
                 previousTrace = "start";
             }
-            String result = previousTrace+"=>"+Arrays.asList(nextTraces.split(",")).parallelStream().map(nextTrace->restTemplate.getForEntity("http://TRACE-"+nextTrace+"/tracetrace?previous="+traceId, String.class).getBody())
+            String result = previousTrace+"=>"+Arrays.asList(nextTraces).parallelStream().map(nextTrace->restTemplate.getForEntity("http://TRACE-"+nextTrace+"/tracetrace?previous="+traceId, String.class).getBody())
                     .collect(Collectors.joining("<br/>"));
             log.info("call next traces result: {}",result);
             return result;

@@ -1,7 +1,7 @@
 ---
 trace:
-  id: '1'
-  next: '2'
+  id: 1
+  next: 2
 spring:
   application:
     name: trace-${trace.id}
@@ -24,8 +24,8 @@ eureka:
       defaultZone: http://localhost:11001/eureka/
 ---
 trace:
-  id: '2'
-  next: '3,4'
+  id: 2
+  next: 3, 4
 spring:
   application:
     name: trace-${trace.id}
@@ -48,8 +48,8 @@ eureka:
       defaultZone: http://localhost:11001/eureka/
 ---
 trace:
-  id: '3'
-  next: '5'
+  id: 3
+  next: 5
 spring:
   application:
     name: trace-${trace.id}
@@ -72,8 +72,8 @@ eureka:
       defaultZone: http://localhost:11001/eureka/
 ---
 trace:
-  id: '4'
-  next: '6,7'
+  id: 4
+  next: 6, 7
 spring:
   application:
     name: trace-${trace.id}
@@ -96,8 +96,8 @@ eureka:
       defaultZone: http://localhost:11001/eureka/
 ---
 trace:
-  next: ''
-  id: '5'
+  id: 5
+  next:
 spring:
   application:
     name: trace-${trace.id}
@@ -123,8 +123,8 @@ eureka:
       defaultZone: http://localhost:11001/eureka/
 ---
 trace:
-  id: '6'
-  next: ''
+  id: 6
+  next:
 spring:
   application:
     name: trace-${trace.id}
@@ -147,8 +147,8 @@ eureka:
       defaultZone: http://localhost:11001/eureka/
 ---
 trace:
-  next: ''
-  id: '7'
+  id: 7
+  next:
 spring:
   application:
     name: trace-${trace.id}
